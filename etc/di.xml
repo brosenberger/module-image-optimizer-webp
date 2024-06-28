@@ -7,6 +7,9 @@
             <argument name="imageConverter" xsi:type="array">
                 <item name="webp" xsi:type="object">BroCode\ImageWebpOptimizer\Model\Converter\WebpImageConverter</item>
             </argument>
+            <argument name="imageValidator" xsi:type="array">
+                <item name="webp" xsi:type="object">BroCode\ImageWebpOptimizer\Model\Converter\WebpImageConverter</item>
+            </argument>
         </arguments>
     </type>
 </config>
