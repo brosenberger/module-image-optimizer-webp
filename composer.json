@@ -1,12 +1,21 @@
 {
   "name": "brocode/module-image-optimizer-webp",
   "version": "0.0.1",
-  "description": "N/A",
+  "license": ["MIT"],
+  "authors": [
+    {
+      "name": "Benjamin Rosenberger",
+      "email": "bensch.rosenberger@gmail.com"
+    }
+  ],
+  "description": "Magento 2 module to optimize images to AVIF format",
   "type": "magento2-module",
   "require": {
-    "magento/framework": "*",
     "brocode/module-image-optimizer": "*",
     "ext-gd": "*"
+  },
+  "suggest": {
+    "brocode/module-image-optimizer-avif": "Additional module for AVIF image optimization"
   },
   "autoload": {
     "files": [
@@ -15,5 +24,11 @@
     "psr-4": {
       "BroCode\\ImageWebpOptimizer\\": ""
     }
-  }
+  },
+  "funding": [
+    {
+      "type": "By me a coffee",
+      "url": "https://www.buymeacoffee.com/brosenberger"
+    }
+  ]
 }
