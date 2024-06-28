@@ -1,0 +1,19 @@
+{
+  "name": "brocode/module-image-optimizer-webp",
+  "version": "0.0.1",
+  "description": "N/A",
+  "type": "magento2-module",
+  "require": {
+    "magento/framework": "*",
+    "bro-code/module-image-optimizer": "*",
+    "ext-gd": "*"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "BroCode\\ImageWebpOptimizer\\": ""
+    }
+  }
+}
