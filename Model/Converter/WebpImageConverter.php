@@ -48,15 +48,16 @@ class WebpImageConverter extends AbstractImageConverter
         try {
             $image = imagecreatefromstring($imageData);
             imagepalettetotruecolor($image);
+
+            $converted = imagewebp($image, $newFile, $this->getImageQuality());
+            if (!$converted) {
+                $this->logger->info('BroCode - ImageOptimizer: Could not convert image to webp: ' . $imagePath);
+            }
         } catch (\Exception $ex) {
             $this->logger->info('BroCode - ImageOptimizer: Could not transform/load image ' . $imagePath . ': ' . $ex->getMessage());
             return false;
         }
 
-        $converted = imagewebp($image, $newFile, $this->getImageQuality());
-        if (!$converted) {
-            $this->logger->info('BroCode - ImageOptimizer: Could not convert image to webp: ' . $imagePath);
-        }
         return $converted;
     }
 
