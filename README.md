@@ -30,6 +30,24 @@ RewriteCond %{REQUEST_FILENAME}\.webp -f
 RewriteRule ^ %{REQUEST_FILENAME}\.webp [L,T=image/webp]
 ```
 
+### Nginx Configuration
+
+Merge into the project nginx vhost (`nginx.conf.sample`). Place the `map` in `http {}`; add the `location` before Magento's generic static `location` under `/media/`.
+
+```
+# In http { } (once per nginx instance or included vhost file)
+map $http_accept $webp_suffix {
+    default "";
+    "~*webp" ".webp";
+}
+
+# In server { }
+location ~* ^/media/.+\.(png|gif|jpe?g)$ {
+    add_header Vary Accept;
+    try_files $uri$webp_suffix $uri $uri/ /get.php$is_args$args;
+}
+```
+
 ## Further Information
 
 See base module for more informations on how to setup the image optimizer: [brocode/module-image-optimizer](https://github.com/brosenberger/module-image-optimizer)
