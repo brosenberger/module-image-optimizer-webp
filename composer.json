@@ -1,6 +1,6 @@
 {
   "name": "brocode/module-image-optimizer-webp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": ["MIT"],
   "authors": [
     {
@@ -9,6 +9,7 @@
     }
   ],
   "description": "Magento 2 module to optimize images to AVIF format",
+  "homepage": "https://brocode.at/modules/module-image-optimizer/",
   "type": "magento2-module",
   "require": {
     "brocode/module-image-optimizer": "^1.0",
